@@ -6,7 +6,6 @@
   <title>Contact – Sina Jafari</title>
   <style>
     :root {
-      --bg-color: #fdfdfd;
       --text-color: #333;
       --nav-bg: #007acc;
       --nav-hover-bg: #005f99;
@@ -16,12 +15,28 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-color);
       color: var(--text-color);
       display: flex;
       flex-direction: column;
       align-items: center;
       font-size: 20px;
+      position: relative;
+      min-height: 100vh;
+      z-index: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("your-image.jpg"); /* 🔁 Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      opacity: 0.3; /* Adjust opacity: 0 (invisible) to 1 (fully visible) */
+      z-index: -1;
     }
 
     nav {
@@ -86,6 +101,10 @@
       max-width: 600px;
       width: 90%;
       padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 40px;
     }
 
     h1 {
